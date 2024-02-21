@@ -10,6 +10,8 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var tflEmailVal: String = ""
+    @State private var tflPasswordVal: String = ""
+    @State private var showingAlert = false
     
     var body: some View {
         ScrollView {
@@ -29,6 +31,10 @@ struct ContentView: View {
                 .offset(x: 20)
                 .padding(.top, 30)
                 .font(.title3)
+                .onChange(of: tflEmailVal) { oldValue, newValue in
+                    //                    print("old value = \(oldValue)")
+                    //                    print("new value = \(newValue)")
+                }
             
             TextField("", text: $tflEmailVal)
                 .frame(height: 40)
@@ -41,7 +47,7 @@ struct ContentView: View {
                 .padding(.top, 30)
                 .font(.title3)
             
-            TextField("", text: $tflEmailVal)
+            TextField("", text: $tflPasswordVal)
                 .frame(height: 40)
                 .border(.black)
                 .padding([.leading, .trailing], 10)
@@ -69,10 +75,10 @@ struct ContentView: View {
                         //Image(systemName: "arrow.up.and.down.circle")
                     }
                 } label: {
-                     Text("Dashboard")
+                    Text("Dashboard")
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.leading, 10)
+                .padding(.leading, 10)
             }
             .frame(height: 40)
             .border(Color.black)
@@ -86,6 +92,13 @@ struct ContentView: View {
             
             Button {
                 print("Button Submit Tapped")
+                if !tflEmailVal.isEmpty && !tflPasswordVal.isEmpty {
+                    print("Allow Login")
+                    showingAlert = false
+                } else {
+                    print("Show Alert")
+                    showingAlert = true
+                }
             } label: {
                 Text("Sign In")
             }
@@ -96,6 +109,9 @@ struct ContentView: View {
             .foregroundColor(.black)
             .padding([.leading, .trailing], 10)
             .padding(.top, 40)
+            .alert("Email or Password field cannot be empty", isPresented: $showingAlert) {
+                Button("OK", role: .cancel) { }
+            }
         }
     }
 }
@@ -121,7 +137,7 @@ extension Color {
         default:
             (a, r, g, b) = (1, 1, 1, 0)
         }
-
+        
         self.init(
             .sRGB,
             red: Double(r) / 255,
@@ -139,28 +155,28 @@ struct CheckboxFieldView: View {
     
     var body: some View {
         
-         Button(action:
-            {
-                //1. Save state
-                self.checkState = !self.checkState
-                print("State : \(self.checkState)")
-                
-                
+        Button(action:
+                {
+            //1. Save state
+            self.checkState = !self.checkState
+            print("State : \(self.checkState)")
+            
+            
         }) {
             HStack(alignment: .top, spacing: 10) {
-                 
-                        //2. Will update according to state
-                   Rectangle()
-                            .fill(self.checkState ? Color.green : Color.red)
-                            .frame(width:20, height:20, alignment: .center)
-                            .cornerRadius(5)
-                     
-                   Text("Set as default")
-                 
+                
+                //2. Will update according to state
+                Rectangle()
+                    .fill(self.checkState ? Color.green : Color.red)
+                    .frame(width:20, height:20, alignment: .center)
+                    .cornerRadius(5)
+                
+                Text("Set as default")
+                
             }
         }
         .foregroundColor(Color.black)
-  
+        
     }
     
 }
