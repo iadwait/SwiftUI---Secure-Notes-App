@@ -11,6 +11,10 @@
 		4B61A8E92B8642D600D9E283 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61A8E82B8642D600D9E283 /* ContentView.swift */; };
 		4B61A8EB2B8642D800D9E283 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B61A8EA2B8642D800D9E283 /* Assets.xcassets */; };
 		4B61A8EE2B8642D800D9E283 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B61A8ED2B8642D800D9E283 /* Preview Assets.xcassets */; };
+		4B61A8F72B86490D00D9E283 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61A8F62B86490D00D9E283 /* LoginView.swift */; };
+		4B61A8FA2B86495000D9E283 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61A8F92B86495000D9E283 /* Extensions.swift */; };
+		4B61A8FD2B8649A000D9E283 /* CheckboxFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61A8FC2B8649A000D9E283 /* CheckboxFieldView.swift */; };
+		4B61A8FF2B864A8400D9E283 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61A8FE2B864A8400D9E283 /* WelcomeScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		4B61A8E82B8642D600D9E283 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4B61A8EA2B8642D800D9E283 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B61A8ED2B8642D800D9E283 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4B61A8F62B86490D00D9E283 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		4B61A8F92B86495000D9E283 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4B61A8FC2B8649A000D9E283 /* CheckboxFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxFieldView.swift; sourceTree = "<group>"; };
+		4B61A8FE2B864A8400D9E283 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +59,12 @@
 		4B61A8E52B8642D600D9E283 /* Secure Notes App */ = {
 			isa = PBXGroup;
 			children = (
-				4B61A8E62B8642D600D9E283 /* Secure_Notes_AppApp.swift */,
 				4B61A8E82B8642D600D9E283 /* ContentView.swift */,
+				4B61A8FB2B86498700D9E283 /* Reusable Views */,
+				4B61A8F82B86494400D9E283 /* Extensions */,
+				4B61A8F42B8648D000D9E283 /* Registration */,
+				4B61A8F52B8648EC00D9E283 /* Login */,
+				4B61A8E62B8642D600D9E283 /* Secure_Notes_AppApp.swift */,
 				4B61A8EA2B8642D800D9E283 /* Assets.xcassets */,
 				4B61A8EC2B8642D800D9E283 /* Preview Content */,
 			);
@@ -65,6 +77,38 @@
 				4B61A8ED2B8642D800D9E283 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4B61A8F42B8648D000D9E283 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				4B61A8FE2B864A8400D9E283 /* WelcomeScreen.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		4B61A8F52B8648EC00D9E283 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4B61A8F62B86490D00D9E283 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		4B61A8F82B86494400D9E283 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4B61A8F92B86495000D9E283 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4B61A8FB2B86498700D9E283 /* Reusable Views */ = {
+			isa = PBXGroup;
+			children = (
+				4B61A8FC2B8649A000D9E283 /* CheckboxFieldView.swift */,
+			);
+			path = "Reusable Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +181,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B61A8FF2B864A8400D9E283 /* WelcomeScreen.swift in Sources */,
+				4B61A8F72B86490D00D9E283 /* LoginView.swift in Sources */,
 				4B61A8E92B8642D600D9E283 /* ContentView.swift in Sources */,
 				4B61A8E72B8642D600D9E283 /* Secure_Notes_AppApp.swift in Sources */,
+				4B61A8FA2B86495000D9E283 /* Extensions.swift in Sources */,
+				4B61A8FD2B8649A000D9E283 /* CheckboxFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
