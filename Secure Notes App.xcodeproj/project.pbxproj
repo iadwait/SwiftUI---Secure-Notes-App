@@ -15,6 +15,7 @@
 		4B61A8FA2B86495000D9E283 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61A8F92B86495000D9E283 /* Extensions.swift */; };
 		4B61A8FD2B8649A000D9E283 /* CheckboxFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61A8FC2B8649A000D9E283 /* CheckboxFieldView.swift */; };
 		4B61A8FF2B864A8400D9E283 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61A8FE2B864A8400D9E283 /* WelcomeScreen.swift */; };
+		4B61A9012B870BD800D9E283 /* CustomTextfieldWithTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61A9002B870BD800D9E283 /* CustomTextfieldWithTitle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		4B61A8F92B86495000D9E283 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4B61A8FC2B8649A000D9E283 /* CheckboxFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxFieldView.swift; sourceTree = "<group>"; };
 		4B61A8FE2B864A8400D9E283 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
+		4B61A9002B870BD800D9E283 /* CustomTextfieldWithTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextfieldWithTitle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				4B61A8FC2B8649A000D9E283 /* CheckboxFieldView.swift */,
+				4B61A9002B870BD800D9E283 /* CustomTextfieldWithTitle.swift */,
 			);
 			path = "Reusable Views";
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B61A9012B870BD800D9E283 /* CustomTextfieldWithTitle.swift in Sources */,
 				4B61A8FF2B864A8400D9E283 /* WelcomeScreen.swift in Sources */,
 				4B61A8F72B86490D00D9E283 /* LoginView.swift in Sources */,
 				4B61A8E92B8642D600D9E283 /* ContentView.swift in Sources */,

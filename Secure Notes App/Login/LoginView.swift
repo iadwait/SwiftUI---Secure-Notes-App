@@ -24,33 +24,9 @@ struct LoginView: View {
                 .frame(height: 4)
                 .padding([.leading,.trailing], 0)
             
+            CustomTextfieldWithTitle(tflValue: $tflEmailVal, lblTop: "Email")
             
-            Text("Email")
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .offset(x: 20)
-                .padding(.top, 30)
-                .font(.title3)
-                .onChange(of: tflEmailVal) { oldValue, newValue in
-                    //                    print("old value = \(oldValue)")
-                    //                    print("new value = \(newValue)")
-                }
-            
-            TextField("", text: $tflEmailVal)
-                .frame(height: 40)
-                .border(.black)
-                .padding([.leading, .trailing], 10)
-            
-            Text("Password")
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .offset(x: 20)
-                .padding(.top, 30)
-                .font(.title3)
-            
-            TextField("", text: $tflPasswordVal)
-                .frame(height: 40)
-                .border(.black)
-                .padding([.leading, .trailing], 10)
-            
+            CustomTextfieldWithTitle(tflValue: $tflEmailVal, lblTop: "Password")
             
             Text("Which page would you like to land on ?")
                 .frame(maxWidth: .infinity, alignment: .leading)
