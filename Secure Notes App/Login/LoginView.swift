@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @State private var tflUserNameVal: String = ""
     @State private var tflPasswordVal: String = ""
+    @State private var landON: String = "Home"
     @State private var showingAlert = false
     @State private var navigateToHomeScreen = false
     
@@ -27,7 +28,7 @@ struct LoginView: View {
             
             CustomTextfieldWithTitle(tflValue: $tflUserNameVal, lblTop: "UserName")
             
-            CustomTextfieldWithTitle(tflValue: $tflPasswordVal, lblTop: "Password")
+            CustomTextfieldWithTitle(tflValue: $tflPasswordVal, lblTop: "Password", isSecureField: true)
             
             Text("Which page would you like to land on ?")
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -39,19 +40,19 @@ struct LoginView: View {
                 
                 Menu {
                     Button {
-                        // do something
+                        landON = "Home"
                     } label: {
-                        Text("Transaction History")
+                        Text("Home")
                         //Image(systemName: "arrow.down.right.circle")
                     }
                     Button {
-                        // do something
+                        landON = "Profile"
                     } label: {
                         Text("Profile")
                         //Image(systemName: "arrow.up.and.down.circle")
                     }
                 } label: {
-                    Text("Dashboard")
+                    Text(landON)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 10)
@@ -65,6 +66,14 @@ struct LoginView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .offset(x: 10)
                 .padding(.top, 10)
+            
+            Button(action: {
+                
+            }, label: {
+                Text("Forgot Password?")
+            })
+            .frame(maxWidth: .infinity, alignment: .trailing)
+            .offset(x: -20, y: 14)
             
             Button {
                 print("Button Submit Tapped")
@@ -86,7 +95,7 @@ struct LoginView: View {
             .border(Color.black)
             .foregroundColor(.black)
             .padding([.leading, .trailing], 10)
-            .padding(.top, 40)
+            .padding(.top, 10)
             .navigationDestination(isPresented: $navigateToHomeScreen, destination: {
                 HomeScreenView()
             })

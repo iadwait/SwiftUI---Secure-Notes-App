@@ -11,6 +11,7 @@ struct CustomTextfieldWithTitle: View {
     
     @Binding var tflValue: String
     @State var lblTop: String = "Title"
+    @State var isSecureField: Bool = false
     
     var body: some View {
         Text(lblTop)
@@ -19,10 +20,19 @@ struct CustomTextfieldWithTitle: View {
             .padding(.top, 30)
             .font(.title3)
         
-        TextField("", text: $tflValue)
+        if isSecureField {
+            SecureField(text: $tflValue) {
+                
+            }
             .frame(height: 40)
             .border(.black)
             .padding([.leading, .trailing], 10)
+        } else {
+            TextField("", text: $tflValue)
+                .frame(height: 40)
+                .border(.black)
+                .padding([.leading, .trailing], 10)
+        }
     }
 }
 

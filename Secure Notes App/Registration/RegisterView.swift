@@ -30,9 +30,9 @@ struct RegisterView: View {
             
             CustomTextfieldWithTitle(tflValue: $tflUserName, lblTop: "UserName")
             
-            CustomTextfieldWithTitle(tflValue: $tflPassword1, lblTop: "Enter Password")
+            CustomTextfieldWithTitle(tflValue: $tflPassword1, lblTop: "Enter Password", isSecureField: true)
             
-            CustomTextfieldWithTitle(tflValue: $tflPassword2, lblTop: "Confirm Password")
+            CustomTextfieldWithTitle(tflValue: $tflPassword2, lblTop: "Confirm Password", isSecureField: true)
             
             Button(action: {
                 if tflUserName.isEmpty || tflPassword1.isEmpty || tflPassword2.isEmpty {
@@ -45,6 +45,8 @@ struct RegisterView: View {
                     // Allow Registration
                     showError = false
                     navigateToHomeScreen = true
+                    Utils.shared.saveData(key: UserDefaultsConstants.userName.rawValue, value: tflUserName)
+                    Utils.shared.saveData(key: UserDefaultsConstants.userPassword.rawValue, value: tflPassword1)
                 }
             }, label: {
                 Text("Register")

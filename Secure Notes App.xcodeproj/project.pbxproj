@@ -18,6 +18,7 @@
 		4B61A9012B870BD800D9E283 /* CustomTextfieldWithTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61A9002B870BD800D9E283 /* CustomTextfieldWithTitle.swift */; };
 		4B61A9042B87101000D9E283 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61A9032B87101000D9E283 /* HomeScreenView.swift */; };
 		4B61A9062B8715A900D9E283 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61A9052B8715A900D9E283 /* RegisterView.swift */; };
+		4B61A9092B872ED200D9E283 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61A9082B872ED200D9E283 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		4B61A9002B870BD800D9E283 /* CustomTextfieldWithTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextfieldWithTitle.swift; sourceTree = "<group>"; };
 		4B61A9032B87101000D9E283 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		4B61A9052B8715A900D9E283 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		4B61A9082B872ED200D9E283 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 		4B61A8E52B8642D600D9E283 /* Secure Notes App */ = {
 			isa = PBXGroup;
 			children = (
+				4B61A9072B872E1300D9E283 /* Utils */,
 				4B61A8E82B8642D600D9E283 /* ContentView.swift */,
 				4B61A8FB2B86498700D9E283 /* Reusable Views */,
 				4B61A8F82B86494400D9E283 /* Extensions */,
@@ -126,6 +129,14 @@
 				4B61A9032B87101000D9E283 /* HomeScreenView.swift */,
 			);
 			path = PostLogin;
+			sourceTree = "<group>";
+		};
+		4B61A9072B872E1300D9E283 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4B61A9082B872ED200D9E283 /* Utils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +214,7 @@
 				4B61A8FF2B864A8400D9E283 /* WelcomeScreen.swift in Sources */,
 				4B61A8F72B86490D00D9E283 /* LoginView.swift in Sources */,
 				4B61A9042B87101000D9E283 /* HomeScreenView.swift in Sources */,
+				4B61A9092B872ED200D9E283 /* Utils.swift in Sources */,
 				4B61A8E92B8642D600D9E283 /* ContentView.swift in Sources */,
 				4B61A8E72B8642D600D9E283 /* Secure_Notes_AppApp.swift in Sources */,
 				4B61A8FA2B86495000D9E283 /* Extensions.swift in Sources */,
