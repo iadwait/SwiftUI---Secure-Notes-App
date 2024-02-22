@@ -45,7 +45,9 @@ struct RegisterView: View {
                     // Allow Registration
                     showError = false
                     navigateToHomeScreen = true
+                    print("Storing Value = \(tflUserName)")
                     Utils.shared.saveData(key: UserDefaultsConstants.userName.rawValue, value: tflUserName)
+                    print("Storing Value = \(tflPassword1)")
                     Utils.shared.saveData(key: UserDefaultsConstants.userPassword.rawValue, value: tflPassword1)
                 }
             }, label: {

@@ -12,6 +12,7 @@ struct LoginView: View {
     @State private var tflPasswordVal: String = ""
     @State private var landON: String = "Home"
     @State private var showingAlert = false
+    @State private var errorMessage = "UserName or Password field cannot be empty"
     @State private var navigateToHomeScreen = false
     
     var body: some View {
@@ -78,11 +79,19 @@ struct LoginView: View {
             Button {
                 print("Button Submit Tapped")
                 if !tflUserNameVal.isEmpty && !tflPasswordVal.isEmpty {
-                    print("Allow Login")
-                    showingAlert = false
-                    navigateToHomeScreen = true
+                    if Utils.shared.validateUserNameAndPassword(enteredUserName: tflUserNameVal, enteredPassword: tflPasswordVal) {
+                        print("Allow Login")
+                        showingAlert = false
+                        navigateToHomeScreen = true
+                    } else {
+                        print("Show Alert")
+                        errorMessage = "UserName or password is incorrect."
+                        showingAlert = true
+                        navigateToHomeScreen = false
+                    }
                 } else {
                     print("Show Alert")
+                    errorMessage = "UserName or Password field cannot be empty"
                     showingAlert = true
                     navigateToHomeScreen = false
                 }
@@ -99,7 +108,7 @@ struct LoginView: View {
             .navigationDestination(isPresented: $navigateToHomeScreen, destination: {
                 HomeScreenView()
             })
-            .alert("UserName or Password field cannot be empty", isPresented: $showingAlert) {
+            .alert(errorMessage, isPresented: $showingAlert) {
                 Button("OK", role: .cancel) { }
             }
         }

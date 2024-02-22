@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct HomeScreenView: View {
+    
+    let userName = Utils.shared.loadData(key: UserDefaultsConstants.userName.rawValue)
+    
     var body: some View {
         ScrollView {
-            Text("Hi Adwait !!")
+            Text("Hi \(userName) !!")
                 .font(.largeTitle)
         }
     }
