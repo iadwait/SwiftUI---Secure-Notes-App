@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var tflEmailVal: String = ""
+    @State private var tflUserNameVal: String = ""
     @State private var tflPasswordVal: String = ""
     @State private var showingAlert = false
     @State private var navigateToHomeScreen = false
@@ -25,7 +25,7 @@ struct LoginView: View {
                 .frame(height: 4)
                 .padding([.leading,.trailing], 0)
             
-            CustomTextfieldWithTitle(tflValue: $tflEmailVal, lblTop: "Email")
+            CustomTextfieldWithTitle(tflValue: $tflUserNameVal, lblTop: "UserName")
             
             CustomTextfieldWithTitle(tflValue: $tflPasswordVal, lblTop: "Password")
             
@@ -68,7 +68,7 @@ struct LoginView: View {
             
             Button {
                 print("Button Submit Tapped")
-                if !tflEmailVal.isEmpty && !tflPasswordVal.isEmpty {
+                if !tflUserNameVal.isEmpty && !tflPasswordVal.isEmpty {
                     print("Allow Login")
                     showingAlert = false
                     navigateToHomeScreen = true
@@ -90,7 +90,7 @@ struct LoginView: View {
             .navigationDestination(isPresented: $navigateToHomeScreen, destination: {
                 HomeScreenView()
             })
-            .alert("Email or Password field cannot be empty", isPresented: $showingAlert) {
+            .alert("UserName or Password field cannot be empty", isPresented: $showingAlert) {
                 Button("OK", role: .cancel) { }
             }
         }

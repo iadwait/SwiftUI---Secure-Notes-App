@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RegisterView: View {
     
-    @State private var tflEmail: String = ""
+    @State private var tflUserName: String = ""
     @State private var tflPassword1: String = ""
     @State private var tflPassword2: String = ""
     @State private var navigateToHomeScreen: Bool = false
@@ -28,14 +28,14 @@ struct RegisterView: View {
                 .frame(height: 4)
                 .padding([.leading,.trailing], 0)
             
-            CustomTextfieldWithTitle(tflValue: $tflEmail, lblTop: "Email")
+            CustomTextfieldWithTitle(tflValue: $tflUserName, lblTop: "UserName")
             
             CustomTextfieldWithTitle(tflValue: $tflPassword1, lblTop: "Enter Password")
             
             CustomTextfieldWithTitle(tflValue: $tflPassword2, lblTop: "Confirm Password")
             
             Button(action: {
-                if tflEmail.isEmpty || tflPassword1.isEmpty || tflPassword2.isEmpty {
+                if tflUserName.isEmpty || tflPassword1.isEmpty || tflPassword2.isEmpty {
                     showError = true
                     errorMessage = "One or more fields empty."
                 } else if tflPassword1 != tflPassword2 {
