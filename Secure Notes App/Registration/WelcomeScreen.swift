@@ -10,6 +10,7 @@ import SwiftUI
 struct WelcomeScreen: View {
     
     @State var navigateToLogin = false
+    @State var navigateToRegistration = false
     
     var body: some View {
         NavigationStack {
@@ -21,7 +22,7 @@ struct WelcomeScreen: View {
             
             VStack {
                 Button {
-                    
+                    navigateToRegistration = true
                 } label: {
                     Text("Register")
                 }
@@ -41,6 +42,9 @@ struct WelcomeScreen: View {
                 .foregroundColor(.black)
                 .navigationDestination(isPresented: $navigateToLogin) {
                     LoginView()
+                }
+                .navigationDestination(isPresented: $navigateToRegistration) {
+                    RegisterView()
                 }
             }
             .frame(maxWidth: .infinity)

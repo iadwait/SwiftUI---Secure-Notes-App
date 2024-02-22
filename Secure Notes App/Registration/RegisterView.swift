@@ -12,6 +12,9 @@ struct RegisterView: View {
     @State private var tflEmail: String = ""
     @State private var tflPassword1: String = ""
     @State private var tflPassword2: String = ""
+    @State private var navigateToHomeScreen: Bool = false
+    @State private var showError: Bool = false
+    @State private var errorMessage: String = "Something went wrong please try again"
     
     var body: some View {
         ScrollView {
@@ -33,11 +36,15 @@ struct RegisterView: View {
             
             Button(action: {
                 if tflEmail.isEmpty || tflPassword1.isEmpty || tflPassword2.isEmpty {
-                    
+                    showError = true
+                    errorMessage = "One or more fields empty."
                 } else if tflPassword1 != tflPassword2 {
-                    
+                    showError = true
+                    errorMessage = "Password and Confirm Password Mismatch."
                 } else {
-                    
+                    // Allow Registration
+                    showError = false
+                    navigateToHomeScreen = true
                 }
             }, label: {
                 Text("Register")
@@ -49,6 +56,12 @@ struct RegisterView: View {
             .border(Color.black)
             .padding([.leading, .trailing], 10)
             .padding(.top, 30)
+            .navigationDestination(isPresented: $navigateToHomeScreen) {
+                HomeScreenView()
+            }
+            .alert(errorMessage, isPresented: $showError) {
+                Button("OK", role: .cancel) { }
+            }
         }
     }
 }
