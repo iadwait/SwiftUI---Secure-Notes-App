@@ -16,6 +16,8 @@
 		4B61A8FD2B8649A000D9E283 /* CheckboxFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61A8FC2B8649A000D9E283 /* CheckboxFieldView.swift */; };
 		4B61A8FF2B864A8400D9E283 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61A8FE2B864A8400D9E283 /* WelcomeScreen.swift */; };
 		4B61A9012B870BD800D9E283 /* CustomTextfieldWithTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61A9002B870BD800D9E283 /* CustomTextfieldWithTitle.swift */; };
+		4B61A9042B87101000D9E283 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61A9032B87101000D9E283 /* HomeScreenView.swift */; };
+		4B61A9062B8715A900D9E283 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61A9052B8715A900D9E283 /* RegisterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		4B61A8FC2B8649A000D9E283 /* CheckboxFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxFieldView.swift; sourceTree = "<group>"; };
 		4B61A8FE2B864A8400D9E283 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 		4B61A9002B870BD800D9E283 /* CustomTextfieldWithTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextfieldWithTitle.swift; sourceTree = "<group>"; };
+		4B61A9032B87101000D9E283 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		4B61A9052B8715A900D9E283 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 				4B61A8F82B86494400D9E283 /* Extensions */,
 				4B61A8F42B8648D000D9E283 /* Registration */,
 				4B61A8F52B8648EC00D9E283 /* Login */,
+				4B61A9022B870FF600D9E283 /* PostLogin */,
 				4B61A8E62B8642D600D9E283 /* Secure_Notes_AppApp.swift */,
 				4B61A8EA2B8642D800D9E283 /* Assets.xcassets */,
 				4B61A8EC2B8642D800D9E283 /* Preview Content */,
@@ -85,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				4B61A8FE2B864A8400D9E283 /* WelcomeScreen.swift */,
+				4B61A9052B8715A900D9E283 /* RegisterView.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -112,6 +118,14 @@
 				4B61A9002B870BD800D9E283 /* CustomTextfieldWithTitle.swift */,
 			);
 			path = "Reusable Views";
+			sourceTree = "<group>";
+		};
+		4B61A9022B870FF600D9E283 /* PostLogin */ = {
+			isa = PBXGroup;
+			children = (
+				4B61A9032B87101000D9E283 /* HomeScreenView.swift */,
+			);
+			path = PostLogin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,9 +198,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B61A9062B8715A900D9E283 /* RegisterView.swift in Sources */,
 				4B61A9012B870BD800D9E283 /* CustomTextfieldWithTitle.swift in Sources */,
 				4B61A8FF2B864A8400D9E283 /* WelcomeScreen.swift in Sources */,
 				4B61A8F72B86490D00D9E283 /* LoginView.swift in Sources */,
+				4B61A9042B87101000D9E283 /* HomeScreenView.swift in Sources */,
 				4B61A8E92B8642D600D9E283 /* ContentView.swift in Sources */,
 				4B61A8E72B8642D600D9E283 /* Secure_Notes_AppApp.swift in Sources */,
 				4B61A8FA2B86495000D9E283 /* Extensions.swift in Sources */,

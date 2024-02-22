@@ -11,6 +11,7 @@ struct LoginView: View {
     @State private var tflEmailVal: String = ""
     @State private var tflPasswordVal: String = ""
     @State private var showingAlert = false
+    @State private var navigateToHomeScreen = false
     
     var body: some View {
         ScrollView {
@@ -26,7 +27,7 @@ struct LoginView: View {
             
             CustomTextfieldWithTitle(tflValue: $tflEmailVal, lblTop: "Email")
             
-            CustomTextfieldWithTitle(tflValue: $tflEmailVal, lblTop: "Password")
+            CustomTextfieldWithTitle(tflValue: $tflPasswordVal, lblTop: "Password")
             
             Text("Which page would you like to land on ?")
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -70,9 +71,11 @@ struct LoginView: View {
                 if !tflEmailVal.isEmpty && !tflPasswordVal.isEmpty {
                     print("Allow Login")
                     showingAlert = false
+                    navigateToHomeScreen = true
                 } else {
                     print("Show Alert")
                     showingAlert = true
+                    navigateToHomeScreen = false
                 }
             } label: {
                 Text("Sign In")
@@ -84,6 +87,9 @@ struct LoginView: View {
             .foregroundColor(.black)
             .padding([.leading, .trailing], 10)
             .padding(.top, 40)
+            .navigationDestination(isPresented: $navigateToHomeScreen, destination: {
+                HomeScreenView()
+            })
             .alert("Email or Password field cannot be empty", isPresented: $showingAlert) {
                 Button("OK", role: .cancel) { }
             }
