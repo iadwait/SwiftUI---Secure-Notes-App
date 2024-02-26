@@ -11,7 +11,7 @@ struct HomeScreenView: View {
     
     
     @State var message:String = "Date Created: \(Date())"
-    let notes = ["Some Dummy Notes", "Some Dummy Notes Some Dummy NotesSome Dummy Notes", "Some Dummy Notes", "Some Dummy Notes", "Some Dummy Notes", "Some Dummy Notes Some Dummy NotesSome Dummy NotesSome Dummy Notes", "Some Dummy Notes", "Some Dummy Notes", "Some Dummy Notes", "Some Dummy Notes", "Some Dummy Notes Some Dummy NotesSome Dummy NotesSome Dummy NotesSome Dummy Notes", "Some Dummy Notes", "Some Dummy Notes", "Some Dummy Notes", "Some Dummy Notes", "Some Dummy Notes", "Some Dummy Notes", "Some Dummy Notes", "Some Dummy Notes", "Some Dummy Notes Some Dummy NotesSome Dummy NotesSome Dummy Notes", "Some Dummy Notes", "Some Dummy Notes Some Dummy NotesSome Dummy NotesSome Dummy NotesSome Dummy Notes"]
+    let notes = ["Some Dummy Note Some Dummy Note Some Dummy Note Some Dummy Note Some Dummy Note Some Dummy Note Some Dummy Note Some Dummy Note", "Some Dummy Note Some Dummy Note Some Dummy Note Some Dummy Note Some Dummy Note Some Dummy Note", "Some Dummy Note Some Dummy Note", "Some Dummy Note Some Dummy Note Some Dummy Note Some Dummy Note Some Dummy Note Some Dummy Note Some Dummy Note Some Dummy Note Some Dummy Note Some Dummy Note Some Dummy Note"]
     let userName = Utils.shared.loadData(key: UserDefaultsConstants.userName.rawValue)
     
     var body: some View {
@@ -21,10 +21,14 @@ struct HomeScreenView: View {
                     ForEach(0..<notes.count) {note in
                         HStack {
                             Text(notes[note])
+                                .padding(.all, 10)
+                        
                             Spacer()
                             Image("RightArrow")
+                                .padding(.trailing, 10)
                         }
-                        .padding([.top, .bottom], 10)
+                        .border(Color.gray)
+                        .padding([.top, .bottom], 12)
                     }
                     .listRowInsets(.init(top: 0,
                                          leading: 0,
