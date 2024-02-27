@@ -18,6 +18,11 @@ struct HomeScreenView: View {
         GeometryReader { reader in
             NavigationView {
                 List {
+                    HStack {
+                        Spacer()
+                        Text("Add Note")
+                            .foregroundColor(.blue)
+                    }
                     ForEach(0..<notes.count) {note in
                         HStack {
                             Text(notes[note])
@@ -29,6 +34,7 @@ struct HomeScreenView: View {
                         }
                         .border(Color.gray)
                         .padding([.top, .bottom], 12)
+                        .listRowSeparator(.hidden)
                     }
                     .listRowInsets(.init(top: 0,
                                          leading: 0,
