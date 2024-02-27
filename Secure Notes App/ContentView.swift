@@ -9,8 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     
+    private let isDebugMode = true
+    
     var body: some View {
-        WelcomeScreen()
+        if !isDebugMode {
+            WelcomeScreen()
+        } else {
+            HomeScreenView()
+        }
     }
 }
 
